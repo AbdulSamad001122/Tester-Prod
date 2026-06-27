@@ -1,6 +1,6 @@
 # Task: Create a file src/db.js that establishes a MongoDB connection using the connection string from process.env.MONGODB_URI (error handling for missing variable is optional).
 **ID**: cmqwiks0b000704i3kscdy12e
-**Status**: TODO
+**Status**: REVIEW
 
 ## Description
 Create a file src/db.js that establishes a MongoDB connection using the connection string from process.env.MONGODB_URI (error handling for missing variable is optional).

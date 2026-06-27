@@ -11,15 +11,21 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // --- Health endpoint ---
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'Ok' });
 });
 
-// Handle non-GET methods to /health
-app.all('/health', (req, res) => {
+// Handle non-GET methods to /api/health
+app.all('/api/health', (req, res) => {
   if (req.method !== 'GET') {
     return res.status(405).send('Method Not Allowed');
   }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 // --- Start server ---
